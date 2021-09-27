@@ -1,0 +1,11 @@
+
+<div class="user-title">{{chatList.active_user.name}} &nbsp;(&nbsp;{{chatList.active_user.mobile}}&nbsp;)</div>
+<table class="table">
+  <tr [ngClass]="{'text-right':msg.type=='0'}" *ngFor="let msg of chatServ.messages">
+    <td><div>{{msg.content}}</div>
+      <div class="when" *ngIf="msg.created<today">{{ msg.created*1000 | date:'short'}}</div>
+      <div class="when" *ngIf="msg.created>=today">{{ msg.created*1000 | date:'h:mm a'}}</div>
+    </td>
+  </tr>
+</table>
+ <hr>

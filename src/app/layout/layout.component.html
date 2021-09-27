@@ -1,0 +1,19 @@
+<div class="container" *ngIf="!userServ.userAuthenticated">
+<app-login></app-login>
+</div>
+<div class="container" *ngIf="userServ.userAuthenticated">
+<app-header></app-header>
+<div class="row">
+  <div class="col-sm-3 col-md-2 pull-left">
+    <app-sidebar></app-sidebar>
+  </div>
+   <div class="col-sm-9 col-md-10">
+     <app-chat-room></app-chat-room>
+   </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <app-send-message></app-send-message>
+  </div>
+</div>
+</div>

@@ -1,0 +1,7 @@
+  <form [formGroup]="userChatForm">
+<div class="btn-group btn-group-toggle user-list" ngbRadioGroup formControlName="userActive">
+    <label ngbButtonLabel class="btn-outline-primary btn-sm" *ngFor="let chat of chatList.get_users();let i=index;">
+      <input ngbButton type="radio" value="{{i}}" (change)="open_chat(chat.id)">{{chat.name}} &nbsp;(&nbsp;{{chat.mobile}}&nbsp;)
+    </label>
+  </div>
+  </form>
